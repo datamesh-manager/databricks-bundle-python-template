@@ -1,0 +1,9 @@
+# The main pipeline for {{.project_name}}
+resources:
+  pipelines:
+    {{.project_name}}_pipeline:
+      name: {{.project_name}}_pipeline
+      target: {{.project_name}}_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb

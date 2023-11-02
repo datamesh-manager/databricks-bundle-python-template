@@ -1,0 +1,71 @@
+{
+    "welcome_message": "\nWelcome to the sample Databricks Asset Bundle template! Please enter the following information to initialize your sample DAB.\n",
+    "properties": {
+        "project_name": {
+            "type": "string",
+            "default": "my_project",
+            "description": "Unique name for this project",
+            "order": 1,
+            "pattern": "^[A-Za-z0-9_]+$",
+            "pattern_match_failure_message": "Name must consist of letters, numbers, and underscores."
+        },
+        "include_notebook": {
+            "type": "string",
+            "default": "yes",
+            "enum": ["yes", "no"],
+            "description": "Include a stub (sample) notebook in '{{.project_name}}{{path_separator}}src'",
+            "order": 2
+        },
+        "include_dlt": {
+            "type": "string",
+            "default": "yes",
+            "enum": ["yes", "no"],
+            "description": "Include a stub (sample) Delta Live Tables pipeline in '{{.project_name}}{{path_separator}}src'",
+            "order": 3
+        },
+        "include_python": {
+            "type": "string",
+            "default": "yes",
+            "enum": ["yes", "no"],
+            "description": "Include a stub (sample) Python package in '{{.project_name}}{{path_separator}}src'",
+            "order": 4
+        },
+        "team_id": {
+            "type": "string",
+            "default": "my-data-contract",
+            "description": "Data Contract ID",
+            "order": 5
+          },
+          "data_contract_id": {
+            "type": "string",
+            "default": "my-data-contract",
+            "description": "Data Contract ID",
+            "order": 6
+          },
+          "data_contract_title": {
+            "type": "string",
+            "default": "My Data Contract",
+            "description": "Data Contract Title",
+            "order": 7
+          },
+          "data_product_id": {
+            "type": "string",
+            "default": "my-data-product",
+            "description": "Data Product ID",
+            "order": 8
+          },
+          "data_product_title": {
+            "type": "string",
+            "default": "My Data Product",
+            "description": "Data Product Title",
+            "order": 9
+          },
+          "output_port_id": {
+            "type": "string",
+            "default": "my-output-port",
+            "description": "Data Product Output Port ID",
+            "order": 10
+          }
+    },
+    "success_message": "\n✨ Your new project has been created in the '{{.project_name}}' directory!\n\nPlease refer to the README.md of your project for further instructions on getting started.\nOr read the documentation on Databricks Asset Bundles at https://docs.databricks.com/dev-tools/bundles/index.html."
+}
