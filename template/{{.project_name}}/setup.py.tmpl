@@ -22,7 +22,8 @@ setup(
     package_dir={'': 'src'},
     entry_points={
         "packages": [
-            "main={{.project_name}}.main:main"
+            "main={{.project_name}}.main:main",
+            "datamesh_manager=datamesh_manager.main:main"
         ]
     },
     install_requires=[

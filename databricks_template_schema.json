@@ -32,8 +32,8 @@
         },
         "team_id": {
             "type": "string",
-            "default": "my-data-contract",
-            "description": "Data Contract ID",
+            "default": "my-team",
+            "description": "Team ID",
             "order": 5
           },
           "data_contract_id": {

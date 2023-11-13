@@ -1,8 +1,8 @@
-# The main job for datamesh_manager_python
+# The datamesh_manager job, sends datacontract.yml + dataproduct.yml to Data Mesh Manager
 resources:
   jobs:
-    datamesh_manager_python_job:
-      name: datamesh_manager_python_job
+    datamesh_manager_job:
+      name: datamesh_manager_job
 
       schedule:
         quartz_cron_expression: '0 * * * * ?'
@@ -17,10 +17,10 @@ resources:
         - task_key: main_task
           job_cluster_key: job_cluster
           python_wheel_task:
-            package_name: datamesh_manager_python
-            entry_point: main
+            package_name: {{.project_name}}
+            entry_point: datamesh_manager
             parameters: 
-              - "/Workspace/${workspace.file_path}"
+              - "/Workspace${workspace.file_path}"
 
           libraries:
             - whl: ../dist/*.whl
@@ -34,6 +34,5 @@ resources:
           new_cluster:
             spark_version: 13.3.x-scala2.12
             node_type_id: Standard_D3_v2
-            autoscale:
-                min_workers: 1
-                max_workers: 4
+            data_security_mode: SINGLE_USER
+            num_workers: 1
